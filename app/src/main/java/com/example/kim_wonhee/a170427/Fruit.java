@@ -9,8 +9,6 @@ public class Fruit {
     static int[] imagelist = {R.drawable.abocado, R.drawable.banana, R.drawable.cherry, R.drawable.cranberry,
             R.drawable.grape, R.drawable.kiwi, R.drawable.orange, R.drawable.watermelon};
 
-    static int[] pricelist = {1000, 2000, 3000, 4000, 5000, 6000, 7000, 8000};
-
     private String name = "";
     private String price = "";
     private int image = 0;
@@ -27,14 +25,6 @@ public class Fruit {
 
     public static void setImagelist(int[] imagelist) {
         Fruit.imagelist = imagelist;
-    }
-
-    public static int[] gerPricelist() {
-        return pricelist;
-    }
-
-    public static void setPricelist(int[] pricelist) {
-        Fruit.pricelist = pricelist;
     }
 
     public String getName() {

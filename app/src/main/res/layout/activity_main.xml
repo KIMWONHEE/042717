@@ -7,6 +7,11 @@
     tools:context="com.example.kim_wonhee.a170427.MainActivity"
     android:orientation="vertical">
 
+    <com.example.kim_wonhee.a170427.Custom2Widget
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/custom2"/>
+
     <GridView
         android:id="@+id/grid"
         android:layout_width="match_parent"

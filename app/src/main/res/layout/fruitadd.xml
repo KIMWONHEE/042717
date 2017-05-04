@@ -6,9 +6,8 @@
     android:background="#003891"
     android:padding="10dp"
     android:gravity="center"
-    android:orientation="horizontal"
-    android:columnCount="5"
-    android:rowCount="2">
+    android:rowCount="2"
+    android:columnCount="5">
 
         <TextView
             android:textSize="15dp"
@@ -19,67 +18,68 @@
             android:layout_row="0"
             android:layout_column="0"/>
 
-        <EditText
+        <AutoCompleteTextView
             android:layout_marginRight="20dp"
             android:padding="5dp"
             android:background="#fff"
             android:id="@+id/f_name"
             android:layout_width="100dp"
-            android:layout_height="wrap_content"
+            android:layout_height  ="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:completionThreshold="1"
             android:layout_row="0"
-            android:layout_column="1"
-            android:layout_marginLeft="10dp"/>
+            android:layout_column="1"/>
 
         <TextView
-            android:layout_marginTop="10dp"
             android:textSize="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="과일가격 :"
             android:textColor="#ffffff"
             android:layout_row="1"
-            android:layout_column="0"/>
+            android:layout_column="0"
+            android:layout_marginTop="10dp"/>
 
         <EditText
-            android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
-            android:layout_marginLeft="10dp"
             android:padding="5dp"
             android:background="#fff"
             android:id="@+id/f_price"
             android:layout_width="100dp"
-            android:layout_height="wrap_content"
+            android:layout_height  ="wrap_content"
+            android:layout_marginLeft="10dp"
             android:layout_row="1"
-            android:layout_column="1" />
+            android:layout_column="1"
+            android:layout_marginTop="10dp"/>
 
         <ImageView
             android:id="@+id/image1"
             android:layout_width="52dp"
             android:layout_height="53dp"
             app:srcCompat="@drawable/abocado"
-            android:layout_rowSpan="2"
+            android:layout_gravity="center"
             android:layout_row="0"
             android:layout_column="2"
-            android:layout_gravity="center" />
+            android:layout_rowSpan="2"/>
 
         <Button
             android:id="@+id/b_next"
             android:layout_width="30dp"
             android:layout_height="wrap_content"
             android:background="@android:drawable/ic_media_ff"
-            android:layout_rowSpan="2"
+            android:layout_gravity="center"
             android:layout_row="0"
             android:layout_column="3"
-            android:layout_gravity="center" />
+            android:layout_rowSpan="2" />
 
         <Button
             android:text="ADD"
             android:layout_width="60dp"
             android:layout_height="wrap_content"
             android:id="@+id/b_add"
-            android:layout_rowSpan="2"
+            android:layout_gravity="center"
             android:layout_row="0"
             android:layout_column="4"
-            android:layout_gravity="center" />
+            android:layout_rowSpan="2"/>
 
 </GridLayout>

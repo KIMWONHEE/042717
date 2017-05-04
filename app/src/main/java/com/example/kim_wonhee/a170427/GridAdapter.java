@@ -14,10 +14,9 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import static com.example.kim_wonhee.a170427.Fruit.fruitlist;
-import static com.example.kim_wonhee.a170427.Fruit.imagelist;
+import org.w3c.dom.Text;
 
+import java.util.ArrayList;
 /**
  * Created by kim_wonhee on 2017. 4. 27..
  */
@@ -26,6 +25,11 @@ public class GridAdapter extends BaseAdapter {
 
     Context context;
     ArrayList<Fruit> fruits;
+
+    int VISIBLE = 0;
+
+    TextView txt_name, txt_price;
+    ImageView image;
 
     public GridAdapter(Context context, ArrayList<Fruit> fruits) {
         this.context = context;
@@ -49,32 +53,34 @@ public class GridAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-//        if (convertView == null)
-//            convertView = LayoutInflater.from(context).inflate(R.layout.griditem, null);
-//
-//        final TextView textView = (TextView) convertView.findViewById(R.id.text);
-//        final ImageView imageView = (ImageView) convertView.findViewById(R.id.image);
-//
-//
-//        textView.setText(fruit.get(position).name);
-//        imageView.setImageResource(R.drawable.abocado);
-//
-//        return convertView;
-
         if (convertView == null)
             convertView = LayoutInflater.from(context).inflate(R.layout.griditem,null);
 
         Fruit fruit = fruits.get(position);
 
-        final TextView txt_name = (TextView) convertView.findViewById(R.id.text_name);
-        final TextView txt_price = (TextView) convertView.findViewById(R.id.text_price);
-        final ImageView image = (ImageView) convertView.findViewById(R.id.image);
+        txt_name = (TextView) convertView.findViewById(R.id.text_name);
+        txt_price = (TextView) convertView.findViewById(R.id.text_price);
+        image = (ImageView) convertView.findViewById(R.id.image);
 
         txt_name.setText(fruit.getName());
-        txt_price.setText(fruit.getPrice());
+        txt_price.setText(fruit.getPrice()+"원");
         image.setImageResource(Fruit.imagelist[fruit.getImage()]);
 
-//        ((GridItem)convertView).setData(imagelist[position], fruitlist[position]);
+        // setChecked
+        if (VISIBLE == 0)
+            txt_price.setVisibility(View.INVISIBLE);
+        else
+            txt_price.setVisibility(View.VISIBLE);
+
         return convertView;
     }
+
+    public void setChecked(Boolean ischecked) {
+        if (ischecked)
+            VISIBLE = 1;
+        else
+            VISIBLE = 0;
+        this.notifyDataSetChanged();
+    }
+
 }

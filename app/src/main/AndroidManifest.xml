@@ -16,7 +16,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CustomWidget"></activity>
+        <activity android:name=".CustomWidget" />
+        <activity android:name=".Custom2Widget"></activity>
     </application>
 
 </manifest>
